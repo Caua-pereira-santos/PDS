@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Questionário</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <main>
+            <p><a href="index.html">Home</a></p>
+        </main>
+    </header>
+
+    <form>
+	<h1>Qual valor disponível para gastar:</h1>
+	<div class="slidecontainer">
+		<input type="range" min="50" max="1000" value="80" class="slider" id="myRange">
+		<p>Valor selecionado: <span id="demo"></span></p>
+	</div>
+
+        <div class="form-group">
+          <label for="culinaria">Qual tipo de culinária desejada?</label><br>
+          <input type="radio" id="doce" name="culinaria" value="doce" onclick="mostrarDoce()">
+          <label for="doce">Doce</label><br>
+          <input type="radio" id="salgado" name="culinaria" value="salgado" onclick="mostrarSalgado()">
+          <label for="salgado">Salgado</label><br>
+        </div>
+
+        <div id="opcoesDoce" class="form-group" style="display: none;">
+          <label for="opcoes-doce">Quente, Fria ou Massas?</label><br>
+          <input type="radio" id="quente" name="opcoes-doce" value="quente">
+          <label for="quente">Quente</label><br>
+          <input type="radio" id="fria" name="opcoes-doce" value="fria">
+          <label for="fria">Fria</label><br>
+          <input type="radio" id="massas" name="opcoes-doce" value="massas">
+          <label for="massas">Massas</label><br>
+        </div>
+
+        <div id="opcoesSalgado" class="form-group" style="display: none;">
+          <label for="massas-salgado">Gostaria de comer massas?</label><br>
+          <input type="radio" id="sim-massas" name="massas-salgado" value="sim">
+          <label for="sim-massas">Sim</label><br>
+          <input type="radio" id="nao-massas" name="massas-salgado" value="nao" onclick="mostrarCarneVermelha()">
+          <label for="nao-massas">Não</label><br>
+        </div>
+
+        <div id="opcoes_carne" style="display:none">
+			<label>Gostaria de comer carne vermelha?</label>
+			<label><input type="radio" name="carne_vermelha" value="sim"> Sim</label>
+			<label><input type="radio" name="carne_vermelha" value="nao"> Não</label>
+		</div>
+        
+      </form>
+
+	<script src="script.js"></script>
+</body>
+</html>
