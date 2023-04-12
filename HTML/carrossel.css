@@ -41,6 +41,7 @@ body{
     cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
+    scroll-behavior: smooth;
 }
 
 .carrossel img{
