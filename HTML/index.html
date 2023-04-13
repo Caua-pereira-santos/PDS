@@ -4,15 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="carousel.css">
+    <title>Carrossel</title>
 </head>
 <body>
-    <header>
-        <main>
-            <p><a href="questionario.html">Página Questionário</a></p>
-            <p><a href="favoritos.html">Página Seus Favoritos</a></p>
-        </main>
-    </header>
-    
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img src="https://via.placeholder.com/300x200?text=Image%201" class="d-block w-100" alt="Image 1">
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="https://via.placeholder.com/300x200?text=Image%202" class="d-block w-100" alt="Image 2">
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="https://via.placeholder.com/300x200?text=Image%203" class="d-block w-100" alt="Image 3">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img src="https://via.placeholder.com/300x200?text=Image%204" class="d-block w-100" alt="Image 4">
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="https://via.placeholder.com/300x200?text=Image%205" class="d-block w-100" alt="Image 5">
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="https://via.placeholder.com/300x200?text=Image%206" class="d-block w-100" alt="Image 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="carousel.js"></script>
 </body>
 </html>
