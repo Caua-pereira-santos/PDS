@@ -32,6 +32,7 @@ body{
 }
 .wrapper i:first-child{
     left: -23px;
+    display: none;
 }
 .wrapper i:last-child{
     right: -23px;
@@ -43,7 +44,13 @@ body{
     white-space: nowrap;
     scroll-behavior: smooth;
 }
-
+.carrossel.dragging{
+    cursor: grab
+    scroll-behavior: auto;
+}
+.carrossel.dragging img{
+    pointer-events: nome;
+}
 .carrossel img{
     height: 340px;
     object-fit: cover;
