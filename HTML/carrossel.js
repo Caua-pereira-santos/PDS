@@ -1,46 +1,31 @@
-const carrossel = document.querySelector(".carrossel"),
-firstImg = carrossel.querySelectorAll("img")[0];
-arrowIcons = document.querySelectorAll(".wrapper i");
+const carousel = document.querySelector('.carousel');
+const carouselContainer = carousel.querySelector('.carousel-container');
+const carouselItems = carousel.querySelectorAll('.carousel-item');
+const carouselPrevButton = carousel.querySelector('.carousel-button-prev');
+const carouselNextButton = carousel.querySelector('.carousel-button-next');
+const carouselItemCount = carouselItems.length;
+const carouselItemWidth = carouselItems[0].offsetWidth + parseFloat(getComputedStyle(carouselItems[0]).marginLeft) + parseFloat(getComputedStyle(carouselItems[0]).marginRight);
+const carouselVisibleItemCount = 4;
+let carouselCurrentIndex = 0;
 
-let isDragStart = false, prevPageX, prevScrollLeft;
-
-
-
-
-const showHideIcons = () => {
-    arrowIcons[0].style.display = carrossel.scrollLeft == 0 ? "none" : "block";
-    arrowIcons[1].style.display = carrossel.scrollLeft == scrollwidth ? "none" : "block";
+function updateCarouselPosition() {
+  carouselContainer.style.transform = `translateX(-${carouselCurrentIndex * carouselItemWidth}px)`;
 }
 
-arrowIcons.forEach(icon => {
-    icon.addEventListener("click", ()=> {
-        let firstImgWidth = firstImg.clientWidth + 14
-        carrossel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
-        setTimeout(() => showHideIcons(),60);
-    })
-});
-
-const dragStart = (e) => {
-    let isDragStart = true;
-    prevPageX = e.pageX;
-    prevScrollLeft = carrossel.scrollLeft
+function handlePrevButtonClick() {
+  if (carouselCurrentIndex > 0) {
+    carouselCurrentIndex--;
+    updateCarouselPosition();
+  }
 }
 
-const dragging = (e) => {
-    if(isDragStart) return;
-    e.preventDefault();
-    carrossel.classList.add ("dragging");
-    let positionDiff = e.pagex - prevPageX
-    carrossel.scrollLeft = prevScrollLeft - positionDiff;
-    showHideIcons();
+function handleNextButtonClick() {
+  if (carouselCurrentIndex < carouselItemCount - carouselVisibleItemCount) {
+    carouselCurrentIndex++;
+    updateCarouselPosition();
+    
+  }
 }
 
-const dragStop = () => {
-    isDragStart = false;
-    carrossel.classList.remove ("dragging");
-}
-
-carrossel.addEventListener("mousedown", dragging);
-carrossel.addEventListener("mousemove", dragging);
-carrossel.addEventListener("mouseup", dragStop);
-carrossel.addEventListener("mouseleave", dragStop)
+carouselPrevButton.addEventListener('click', handlePrevButtonClick);
+carouselNextButton.addEventListener('click', handleNextButtonClick);

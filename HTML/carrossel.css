@@ -16,47 +16,40 @@ body{
 .wrapper{
     max-width: 1200px;
     position: relative;
-}
-.wrapper i{
-    top: 50%;
-    height: 46px;
-    width: 46px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    position: absolute;
-    text-align: center;
-    line-height: 46px; 
-    background: wheat;
-    border-radius: 50%;
-    transform: translateY(-50%);
-}
-.wrapper i:first-child{
-    left: -23px;
-    display: none;
-}
-.wrapper i:last-child{
-    right: -23px;
-}
-.wrapper .carrossel{
-    font-size: 0px;
-    cursor: pointer;
-    overflow: hidden;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-}
-.carrossel.dragging{
-    cursor: grab
-    scroll-behavior: auto;
-}
-.carrossel.dragging img{
-    pointer-events: nome;
-}
-.carrossel img{
-    height: 340px;
-    object-fit: cover;
-    margin-left: 14px;
-    width: calc(100% /3);
-}
-.carrossel img:first-child{
-    margin-left: 0px;
-}
+    .carousel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+      .carousel-container {
+        display: flex;
+        flex-wrap: nowrap;
+        transition: transform 0.5s ease-in-out;
+      }
+      .carousel-item {
+        flex: 0 0 25%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .carousel-item img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        background: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+      }
+      .carousel-button-prev {
+        left: 0;
+      }
+      .carousel-button-next {
+        right: 0;
+      }
+      
