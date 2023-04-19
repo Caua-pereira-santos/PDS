@@ -12,16 +12,22 @@
         </div>
         <nav class="header-center">
           <ul>
-            <li class="active"><a href="index.html">Home</a></li>
-            <li ><a href="favoritos.html">Favoritos</a></li>
+            <li class="active"><a class = "h" href="index.html">Home</a></li>
+            <li ><a class = "f" href="favoritos.html">Favoritos</a></li>
           </ul>
         </nav>
         <div class="header-right">
           <a href="#"><img src="img/icone-lupa-removebg-preview.png"></a>
           <a href="#"><img src="img/icone-tres-barrinhas-removebg-preview.png"></a>
+          <div class="langs">
+            <a  href="#" language="portuguese" class="active">pt-BR</a>
+            <a  href="#" language="english">en</a>
+  
+       </div>
         </div>
+
       </header>
-      <h1>Bem-vinda de volta, Akemi!</h1>
+      <h1 class="title">Bem-vinda de volta, Akemi!</h1>
 
     <div class="galeria">
       <div class="imagem" style="background-image: url('img/imagem1.jpg')">
@@ -59,6 +65,41 @@
           localStorage.setItem('favoritos', JSON.stringify(favoritos));
         });
       });
+      /*linguagens*/
+       let langs = document.querySelector(".langs"),
+            link = document.querySelectorAll("a"),
+            title = document.querySelector(".title"),
+            h = document.querySelector(".h")
+            f = document.querySelector(".f");
+
+    link.forEach(el=>{
+     el.addEventListener("click", ()=>{
+          langs.querySelector(".active").classList.remove("active");
+          el.classList.add("active");
+
+          let attr = el.getAttribute("language")
+
+          title.textContent = data[attr].title
+          h.textContent = data[attr].h
+          f.textContent = data[attr].f
+     })
+})
+      
+      let data = {
+        portuguese : {
+          h: "Home",
+          f: "Favoritos",
+          title: "Bem-vinda de volta, Akemi!" 
+        },
+        english : {
+          h: "Home",
+          f: "Favorites",
+          title: "Welcome Back , Akemi!" 
+        }
+
+      }
+
+  
     </script>
   </body>
 </html>

@@ -1,21 +1,21 @@
 li {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1{
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 /* Estilo CSS */
 .imagem {
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-  border: 2px solid black;
-  display: inline-block;
-  background-size: cover;
+width: 200px;
+height: 200px;
+margin: 20px;
+border: 2px solid black;
+display: inline-block;
+background-size: cover;
 }
 .favorito {
-  background-color: rgb(0, 255, 0);
+background-color: rgb(0, 255, 0);
 }
 
 .favoritar{
@@ -75,4 +75,3 @@ color: #666;
 .header-right a:hover {
 color: #000;
 }
-
