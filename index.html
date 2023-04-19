@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Restaurantes</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+  </head>
+  <body>
+    
+    <header>
+        <div class="header-left">
+          <a href="#"><img src="img/Logo-removebg-preview.png" ></a>
+        </div>
+        <nav class="header-center">
+          <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li ><a href="favoritos.html">Favoritos</a></li>
+          </ul>
+        </nav>
+        <div class="header-right">
+          <a href="#"><img src="img/icone-lupa-removebg-preview.png"></a>
+          <a href="#"><img src="img/icone-tres-barrinhas-removebg-preview.png"></a>
+        </div>
+      </header>
+      <h1>Bem-vinda de volta, Akemi!</h1>
+
+    <div class="galeria">
+      <div class="imagem" style="background-image: url('img/imagem1.jpg')">
+        <span class="favoritar" data-imagem="img/imagem1.jpg">♡</span>
+      </div>
+      <div class="imagem" style="background-image: url('img/imagem2.jpg')">
+        <span class="favoritar" data-imagem="img/imagem2.jpg">♡</span>
+      </div>
+      <div class="imagem" style="background-image: url('img/imagem3.jpg')">
+        <span class="favoritar" data-imagem="img/imagem3.jpg">♡</span>
+      </div>
+      <div class="imagem" style="background-image: url('img/imagem4.jpg')">
+        <span class="favoritar" data-imagem="img/imagem4.jpg">♡</span>
+      </div>
+      <div class="imagem" style="background-image: url('img/imagem5.jpg')">
+        <span class="favoritar" data-imagem="img/imagem5.jpg">♡</span>
+      </div>
+    </div>
+
+    <script>
+      let favoritarBtns = document.querySelectorAll('.favoritar');
+      let favoritos = [];
+
+      favoritarBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          let imagem = this.getAttribute('data-imagem');
+          if (favoritos.includes(imagem)) {
+            let index = favoritos.indexOf(imagem);
+            favoritos.splice(index, 1);
+            this.classList.remove('favorito');
+          } else {
+            favoritos.push(imagem);
+            this.classList.add('favorito');
+          }
+          localStorage.setItem('favoritos', JSON.stringify(favoritos));
+        });
+      });
+    </script>
+  </body>
+</html>

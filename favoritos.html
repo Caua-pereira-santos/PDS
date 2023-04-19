@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Favoritos</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+      <a href="#"><img src="img/Logo-removebg-preview.png" ></a>
+    </div>
+    <nav class="header-center">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li  class="active"><a href="favoritos.html">Favoritos</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <a href="#"><img src="img/icone-lupa-removebg-preview.png"></a>
+      <a href="#"><img src="img/icone-tres-barrinhas-removebg-preview.png"></a>
+    </div>
+  </header>
+
+</head>
+<body>
+  <h1>Seus restaurantes favoritos estão aqui:</h1>
+  <div class="galeria">
+  </div>
+
+<script>
+// JavaScript para exibir as imagens favoritas
+let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+let galeria = document.querySelector('.galeria');
+
+favoritos.forEach(function(imagem) {
+  let div = document.createElement('div');
+  div.className = 'imagem';
+  div.style.backgroundImage = `url(${imagem})`;
+  galeria.appendChild(div);
+});
+</script>
+</body>
+</html>
