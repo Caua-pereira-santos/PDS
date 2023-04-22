@@ -1,77 +1,15 @@
-li {
-  font-family: Arial, Helvetica, sans-serif;
+/*Definindo a altura e largura da imagem do logo*/
+.logo img {
+    height: 80px;
+    width: auto;
 }
 
-h1{
-  font-family: Arial, Helvetica, sans-serif;
-}
-/* Estilo CSS */
-.imagem {
-width: 200px;
-height: 200px;
-margin: 20px;
-border: 2px solid black;
-display: inline-block;
-background-size: cover;
-}
-.favorito {
-background-color: rgb(0, 255, 0);
+/*Definindo a margem à direita para os itens do cabeçalho*/
+.nav-link {
+    margin-right: 40px;
 }
 
-.favoritar{
-font-size: 190%;
-font-weight: bold;
-position: relative;
-top: 160px;
-left: 170px;
-}
-
-
-
-/* Estilo header */
-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 20px;
-background-color: #f2f2f2;
-}
-
-.header-left img {
-height: 70px;
-}
-
-.header-right img{
-height: 25px;
-}
-
-.header-center ul {
-list-style: none;
-margin: 0;
-padding: 0;
-display: flex;
-}
-
-.header-center li {
-margin: 0 10px;
-}
-
-.header-center li a {
-text-decoration: none;
-color: #666;
-}
-
-.header-center li.active a {
-color: #000;
-font-weight: bold;
-}
-
-.header-right a {
-margin-left: 10px;
-color: #666;
-
-}
-
-.header-right a:hover {
-color: #000;
+/*Definindo o sublinhado para o link em que a pessoa está*/
+.navbar-nav .nav-link.active {
+    text-decoration: underline;
 }
